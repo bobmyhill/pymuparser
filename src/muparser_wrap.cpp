@@ -144,9 +144,9 @@ static PyMethodDef g_PyFuncs[] = {
     {NULL, NULL, 0, NULL}
 };
 
-static struct PyModuleDef _muparsermodule = {
+static struct PyModuleDef muparsermodule = {
    PyModuleDef_HEAD_INIT,
-   "_muparser",
+   "muparser",
    NULL,
    -1,
    g_PyFuncs
@@ -157,5 +157,5 @@ static struct PyModuleDef _muparsermodule = {
 // ============================================================================
 PyMODINIT_FUNC PyInit_muparser(void)
 {
-    return PyModule_Create(&_muparsermodule);
+    return PyModule_Create(&muparsermodule);
 }
