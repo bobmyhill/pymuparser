@@ -40,26 +40,26 @@ mu::Parser g_MathParser;
 // A Python callback for variable parsing
 PyObject* g_pParseVarCallback;
 
-std::list<double*> g_Variables;
+std::list<float*> g_Variables;
 
 
 // ============================================================================
 // >> CALLBACKS
 // ============================================================================
-double NotParserCallback(double val)
+float NotParserCallback(float val)
 {
     return !val;
 }
 
-double* ParseVarCallback(const char* szName, void* pUserData)
+float* ParseVarCallback(const char* szName)
 {
-    static double zero = 0.0;
+    static float zero = 0.0;
     
     PyObject* pResult = PyObject_CallFunction(g_pParseVarCallback, "s", szName);
     if (!pResult)
         return &zero;
     
-    double* pVar = (double*) malloc(sizeof(double));
+    float* pVar = (float*) malloc(sizeof(float));
     *pVar = PyFloat_AsDouble(pResult);
     Py_XDECREF(pResult);
     g_Variables.push_back(pVar);
@@ -86,7 +86,7 @@ static PyObject* init_parser(PyObject* self, PyObject* args)
     g_pParseVarCallback = pTempCallback;    // Remember new callback
     
     g_MathParser.DefineInfixOprt("!", &NotParserCallback);
-    g_MathParser.SetVarFactory(&ParseVarCallback, NULL);
+    g_MathParser.SetVarFactory(&ParseVarCallback);
     g_MathParser.EnableOptimizer();
     
     Py_RETURN_NONE;
@@ -102,7 +102,7 @@ static PyObject* unload_parser(PyObject* self, PyObject* args)
 static PyObject* clear_vars(PyObject* self, PyObject* args)
 {
     g_MathParser.ClearVar();
-    for (std::list<double*>::iterator it=g_Variables.begin(); it != g_Variables.end(); ++it)
+    for (std::list<float*>::iterator it=g_Variables.begin(); it != g_Variables.end(); ++it)
         free(*it);
     
     g_Variables.clear();

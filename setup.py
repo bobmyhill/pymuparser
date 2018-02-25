@@ -26,7 +26,6 @@ SOURCES = [
     'src/thirdparty/musparser/src/muParserDLL.cpp',
     'src/thirdparty/musparser/src/muParserError.cpp',
     'src/thirdparty/musparser/src/muParserInt.cpp',
-    'src/thirdparty/musparser/src/muParserTest.cpp',
     'src/thirdparty/musparser/src/muParserTokenReader.cpp',
 ]
 
