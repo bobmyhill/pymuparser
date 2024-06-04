@@ -5,7 +5,7 @@ pyMuParser |version|
 Overview
 --------
 
-A python wrapper around MuParser.
+A python binding of MuParser.
 
 Requirements
 ------------
@@ -17,7 +17,7 @@ Requirements
 Installation
 ------------
 
-
+The easiest method to install is via pip.
 
 """
 from __future__ import absolute_import
