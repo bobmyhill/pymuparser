@@ -16,17 +16,17 @@ from distutils.core import setup
 # =============================================================================
 SOURCES = [
     # muparser binding
-    'src/muparser_wrap.cpp',
+    'pymuparser/cpp/muparser_wrap.cpp',
     
     # MuParser
-    'src/thirdparty/musparser/src/muParser.cpp',
-    'src/thirdparty/musparser/src/muParserBase.cpp',
-    'src/thirdparty/musparser/src/muParserBytecode.cpp',
-    'src/thirdparty/musparser/src/muParserCallback.cpp',
-    'src/thirdparty/musparser/src/muParserDLL.cpp',
-    'src/thirdparty/musparser/src/muParserError.cpp',
-    'src/thirdparty/musparser/src/muParserInt.cpp',
-    'src/thirdparty/musparser/src/muParserTokenReader.cpp',
+    'pymuparser/cpp/muparser/src/muParser.cpp',
+    'pymuparser/cpp/muparser/src/muParserBase.cpp',
+    'pymuparser/cpp/muparser/src/muParserBytecode.cpp',
+    'pymuparser/cpp/muparser/src/muParserCallback.cpp',
+    'pymuparser/cpp/muparser/src/muParserDLL.cpp',
+    'pymuparser/cpp/muparser/src/muParserError.cpp',
+    'pymuparser/cpp/muparser/src/muParserInt.cpp',
+    'pymuparser/cpp/muparser/src/muParserTokenReader.cpp',
 ]
 
 
@@ -34,7 +34,7 @@ SOURCES = [
 # >> EXTRA INCLUDES
 # =============================================================================
 INCLUDE_DIRS = [
-    'src/thirdparty/musparser/include',
+    'pymuparser/cpp/muparser/include',
 ]
 
 
@@ -42,7 +42,7 @@ INCLUDE_DIRS = [
 # >> LIBRARY SEARCH DIRECTORIES
 # =============================================================================
 LIBRARY_DIRS = [
-    'src/thirdparty/musparser/lib',
+    'pymuparser/cpp/muparser/lib',
 ]
 
 
@@ -66,6 +66,7 @@ else:
 # >> COMPILER FLAGS
 # =============================================================================
 COMPILER_FLAGS = [
+    '-std=c++11'
     # This disables annoying visibility warnings
     #'-Wno-attributes',
 
