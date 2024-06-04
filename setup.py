@@ -16,17 +16,17 @@ from distutils.core import setup
 # =============================================================================
 SOURCES = [
     # muparser binding
-    'src/muparser_wrap.cpp',
+    'pymuparser/cpp/muparser_wrap.cpp',
     
     # MuParser
-    'src/thirdparty/musparser/src/muParser.cpp',
-    'src/thirdparty/musparser/src/muParserBase.cpp',
-    'src/thirdparty/musparser/src/muParserBytecode.cpp',
-    'src/thirdparty/musparser/src/muParserCallback.cpp',
-    'src/thirdparty/musparser/src/muParserDLL.cpp',
-    'src/thirdparty/musparser/src/muParserError.cpp',
-    'src/thirdparty/musparser/src/muParserInt.cpp',
-    'src/thirdparty/musparser/src/muParserTokenReader.cpp',
+    'pymuparser/cpp/thirdparty/musparser/src/muParser.cpp',
+    'pymuparser/cpp/thirdparty/musparser/src/muParserBase.cpp',
+    'pymuparser/cpp/thirdparty/musparser/src/muParserBytecode.cpp',
+    'pymuparser/cpp/thirdparty/musparser/src/muParserCallback.cpp',
+    'pymuparser/cpp/thirdparty/musparser/src/muParserDLL.cpp',
+    'pymuparser/cpp/thirdparty/musparser/src/muParserError.cpp',
+    'pymuparser/cpp/thirdparty/musparser/src/muParserInt.cpp',
+    'pymuparser/cpp/thirdparty/musparser/src/muParserTokenReader.cpp',
 ]
 
 
@@ -34,7 +34,7 @@ SOURCES = [
 # >> EXTRA INCLUDES
 # =============================================================================
 INCLUDE_DIRS = [
-    'src/thirdparty/musparser/include',
+    'pymuparser/cpp/thirdparty/musparser/include',
 ]
 
 
@@ -42,7 +42,7 @@ INCLUDE_DIRS = [
 # >> LIBRARY SEARCH DIRECTORIES
 # =============================================================================
 LIBRARY_DIRS = [
-    'src/thirdparty/musparser/lib',
+    'pymuparser/cpp/thirdparty/musparser/lib',
 ]
 
 
