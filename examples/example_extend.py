@@ -1,17 +1,3 @@
-# pyMuParser
-This is a Python binding for MuParser (https://github.com/beltoforion/muparser).
-It is based on the project by Ayuto (https://github.com/Ayuto/Py-MuParser), adapted for the modern MuParser project, and with additional helper classes.
-
-### Installation
-The easiest way to install this project on your machine, is to use pip:
-
-`python -m pip install pymuparser`
-
-### Getting started
-
-Examples for scalar and vector expressions (using the `ScalarExpression` and `VectorExpression` classes in `pymuparser.expression`) are given in the examples directory (https://github.com/bobmyhill/pymuparser/tree/main/examples). A vector example with added functions (those provided by deal.II) is reproduced below:
-
-```
 from pymuparser.expression import VectorExpression
 import numpy as np
 from scipy.special import erfc
@@ -25,15 +11,17 @@ expr = "500 + 500*(erfc(z/(h*delta)) - erfc((1-z/h)/delta)) + A*cos(pi*x/h)*sin(
 
 # These are the deal.II functions we want to add to muparser processing.
 # They must all take only one variable as argument.
-extra_functions = [["int", lambda x: np.round(x, 0)],
-                   ["ceil", np.ceil],
-                   ["floor", np.floor],
-                   ["cot", lambda x: 1./np.tan(x)],
-                   ["csc", lambda x: 1/np.sin(x)],
-                   ["sec", lambda x: 1/np.cos(x)],
-                   ["erfc", erfc],
-                   ["rand", np.random.rand],
-                   ["rand_seed", np.random.seed]]
+extra_functions = [
+    ["int", lambda x: np.round(x, 0)],
+    ["ceil", np.ceil],
+    ["floor", np.floor],
+    ["cot", lambda x: 1.0 / np.tan(x)],
+    ["csc", lambda x: 1 / np.sin(x)],
+    ["sec", lambda x: 1 / np.cos(x)],
+    ["erfc", erfc],
+    ["rand", np.random.rand],
+    ["rand_seed", np.random.seed],
+]
 
 
 # Here, the variables are defined as x and y (spatial coordinates)
@@ -59,7 +47,7 @@ constants = {
 # at two distinct times.
 xs = np.linspace(0, 1350000, 11)
 ys = np.linspace(0, 1350000, 11)
-ts = np.linspace(0, 2.e8, 2)
+ts = np.linspace(0, 2.0e8, 2)
 
 # To evaluate the function in the minimal number of lines,
 # we use the meshgrid function of numpy to create equally
@@ -98,4 +86,3 @@ for idx_c in range(2):
 
 fig.set_tight_layout(True)
 plt.show()
-```
