@@ -16,8 +16,8 @@ extra_functions = [
     ["ceil", np.ceil],
     ["floor", np.floor],
     ["cot", lambda x: 1.0 / np.tan(x)],
-    ["csc", lambda x: 1 / np.sin(x)],
-    ["sec", lambda x: 1 / np.cos(x)],
+    ["csc", lambda x: 1.0 / np.sin(x)],
+    ["sec", lambda x: 1.0 / np.cos(x)],
     ["erfc", erfc],
     ["rand", np.random.rand],
     ["rand_seed", np.random.seed],
@@ -68,7 +68,6 @@ parser = VectorExpression(expr, variables, constants, extra_functions)
 # at the given values.
 compositions = parser.evaluate(values)
 
-# Finally, let's plot the values.
 # Finally, let's plot the values.
 fig = plt.figure(figsize=(12, 8))
 ax = [fig.add_subplot(2, 2, i) for i in range(1, 5)]
