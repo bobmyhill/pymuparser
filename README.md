@@ -4,6 +4,7 @@ It is based on the project by Ayuto (https://github.com/Ayuto/Py-MuParser), adap
 
 ### Installation
 The easiest way to install this project on your machine, is to use pip:
+
 `python -m pip install pymuparser`
 
 ### Getting started
