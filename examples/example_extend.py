@@ -1,17 +1,3 @@
-# pyMuParser
-This is a Python binding for MuParser (https://github.com/beltoforion/muparser).
-It is based on the project by Ayuto (https://github.com/Ayuto/Py-MuParser), adapted for the modern MuParser project, and with additional helper classes.
-
-### Installation
-The easiest way to install this project on your machine, is to use pip:
-
-`python -m pip install pymuparser`
-
-### Getting started
-
-Examples for scalar and vector expressions (using the `ScalarExpression` and `VectorExpression` classes in `pymuparser.expression`) are given in the examples directory (https://github.com/bobmyhill/pymuparser/tree/main/examples). A vector example with added functions (those provided by deal.II) is reproduced below:
-
-```
 from pymuparser.expression import VectorExpression
 import numpy as np
 from scipy.special import erfc
@@ -98,4 +84,3 @@ for idx_c in range(2):
 
 fig.set_tight_layout(True)
 plt.show()
-```
