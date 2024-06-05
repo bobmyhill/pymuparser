@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "pymuparser"
-version = "0.1.0"
+version = "1.1.0"
 description = "A wrapper around muparser"
 license = "GPL"
 authors = ["Bob Myhill <bob.myhill@bristol.ac.uk>",]
-readme = "Readme.md"
+readme = "README.md"
 homepage = "https://github.com/bobmyhill/pymuparser"
 repository = "https://github.com/bobmyhill/pymuparser"
 documentation = "https://github.com/bobmyhill/pymuparser"
